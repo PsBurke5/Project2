@@ -19,3 +19,11 @@ slope = params[0]
 intercept = params[1]
 
 fitting_functions.print_equation(slope, intercept, 'N', 'm')
+fig = plt.figure()
+plt.scatter(d, f, label='Data')
+plt.plot(d, fitting_functions.linear(slope, d, intercept), label='Linear Fit')
+plt.legend(loc='best')
+plt.xlabel("Displacement (m)")
+plt.ylabel("Force (N)")
+plt.show()
+fig.savefig("plot_spring.png")
